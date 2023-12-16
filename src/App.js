@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+
+import Navbar from './layout/Navbar';
+import Home from './pages/Home';
+import EditGroup from './groups/EditGroup';
+import AddGroup from './groups/AddGroup';
+import ViewGroup from './groups/ViewGroup';
+import AddChild from './children/AddChild';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App min-vh-100">
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route exact path='/' element={<Home/>}/>
+          <Route exact path='/editgroup/:id' element={<EditGroup/>} />
+          <Route exact path='/group/:id' element={<ViewGroup/>} />
+          <Route exact path='/addgroup' element={<AddGroup/>} />
+          <Route exact path='/addchild/:id' element={<AddChild/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }

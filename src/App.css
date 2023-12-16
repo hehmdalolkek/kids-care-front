@@ -1,38 +1,11 @@
-.App {
-  text-align: center;
+.error-container {
+  position: fixed;
+  top: -100px; /* начальное положение за пределами экрана */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.5s; /* добавляем плавную анимацию */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error-container.show {
+  top: 20px; /* положение сверху, когда сообщение видимо */
 }
