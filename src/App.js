@@ -11,6 +11,8 @@ import EditGroup from './groups/EditGroup';
 import AddGroup from './groups/AddGroup';
 import ViewGroup from './groups/ViewGroup';
 import AddChild from './children/AddChild';
+import ViewChild from './children/ViewChild';
+import EditChild from './children/EditChild';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route exact path='/group/:id' element={<ViewGroup/>} />
           <Route exact path='/addgroup' element={<AddGroup/>} />
           <Route exact path='/addchild/:id' element={<AddChild/>} />
+          <Route exact path='/child/:id' element={<ViewChild/>} />
+          <Route exact path='/editchild/:id' element={<EditChild/>} />
         </Routes>
       </Router>
     </div>
